@@ -3,7 +3,7 @@ import java.net.ServerSocket;
 import java.net.Socket;
 
 public class MonitorServer {
-    public static void main(@org.jetbrains.annotations.NotNull String[] args) {
+    public static void main(String[] args) {
         if (args.length < 1) return;
         int port = Integer.parseInt(args[0]);
         try (ServerSocket serverSocket = new ServerSocket(port)) {
@@ -15,7 +15,7 @@ public class MonitorServer {
             }
         } catch (IOException ex) {
             System.out.println("Server exception: " + ex.getMessage());
-            ex.printStackTrace();
+            //ex.printStackTrace();
         }
     }
 }

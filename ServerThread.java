@@ -8,10 +8,11 @@ public class ServerThread extends Thread {
         this.socket = socket;
     }
 
+    @Override
     public void run() {
         try {
             InputStream input = socket.getInputStream();
-            BufferedReader reader = new BufferedReader(new InputStreamReader(input));
+            var reader = new BufferedReader(new InputStreamReader(input));
             OutputStream output = socket.getOutputStream();
             PrintWriter writer = new PrintWriter(output, true);
             String text;
@@ -24,7 +25,7 @@ public class ServerThread extends Thread {
             socket.close();
         } catch (IOException ex) {
             System.out.println("Server exception: " + ex.getMessage());
-            ex.printStackTrace();
+            //ex.printStackTrace();
         }
     }
 }
