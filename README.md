@@ -1,6 +1,4 @@
-# JavaEmbeddedMonitor
-
-
+# Java Embedded Monitor
 
 ## Getting started
 
