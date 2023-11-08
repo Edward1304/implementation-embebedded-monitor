@@ -3,9 +3,15 @@ import java.net.ServerSocket;
 import java.net.Socket;
 
 public class MonitorServer {
+    private static final int DEFAULT_PORT = 65432;
     public static void main(String[] args) {
-        if (args.length < 1) return;
-        int port = Integer.parseInt(args[0]);
+        int port;
+
+        if (args.length > 0) {
+            port = Integer.parseInt(args[0]);
+        } else {
+            port = DEFAULT_PORT;
+        }
         try (ServerSocket serverSocket = new ServerSocket(port)) {
             System.out.println("Server is listening on port " + port);
             while (true) {
